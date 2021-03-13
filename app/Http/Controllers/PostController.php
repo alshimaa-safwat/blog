@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    function index(){
+    public function index(){
         $posts=[
             ['id'=>1,'title'=>'laravel','posted_by'=>'ahmed','created_at'=>'2021-3-5'],
             ['id'=>2,'title'=>'php','posted_by'=>'mohamed','created_at'=>'2021-3-12'],
@@ -16,4 +16,13 @@ class PostController extends Controller
             'posts'=>$posts
         ]);
     }
+
+    public function show($id){
+        $post=['id'=>1,'title'=>'laravel','posted_by'=>'ahmed','email'=>'ahmed@gmail.com','description'=>'show post description','created_at'=>'2021-3-5'];
+        return view('posts.show',[
+            'post'=>$post
+        ]);
+    }
+
+
 }
